@@ -56,14 +56,18 @@
     <key>NSCalendarsUsageDescription</key>
     <string>calendar</string>
 
-    <key>NSAppleMusicUsageDescription </key>
-    <string>app music</string>
+    <key>NSAppleMusicUsageDescription</key> 
+    <string>Our app does not request this permission or utilize this functionality but it is included in our info.plist since our app utilizes the thirs party libraries in Flutter, which references this permission in its code.</string>
+
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Bluetooth is used to communicate with BLE devices.</string>
 
     <key>NSMotionUsageDescription</key>
     <string>motion</string>
 
     <key>NSSpeechRecognitionUsageDescription </key>
-    <string>speech recognition</string>
+    <string>Our app does not request this permission or utilize this functionality but it is included in our info.plist since our app utilizes the thirs party libraries in Flutter, which references this permission in its code.</string>
+
 
     <key>NSLocationAlwaysUsageDescription</key>
     <string>location always</string>
