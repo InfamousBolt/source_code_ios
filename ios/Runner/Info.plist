@@ -65,8 +65,8 @@
     <key>NSMotionUsageDescription</key>
     <string>motion</string>
 
-    <key>NSSpeechRecognitionUsageDescription </key>
-    <string>Our app does not request this permission or utilize this functionality but it is included in our info.plist since our app utilizes the thirs party libraries in Flutter, which references this permission in its code.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Our app does not request this permission or utilize this functionality but it is included in our info.plist since our app utilizes the third party libraries in Flutter, which references this permission in its code.</string>
 
 
     <key>NSLocationAlwaysUsageDescription</key>
