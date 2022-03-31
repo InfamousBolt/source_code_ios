@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "20987748914-v9a5c762ha0sb842ms4f003r3fckidk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mothering_shop",
+            "certificate_hash": "6012b2806467356d8c950559a8df0ae94e95d14a"
+          }
+        },
+        {
           "client_id": "20987748914-onp0ifq1sbi9lit5v7mjveqrt8eobb5c.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,6 +45,13 @@
             {
               "client_id": "20987748914-onp0ifq1sbi9lit5v7mjveqrt8eobb5c.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "20987748914-i7coo8s15cas4gb4vvj3p3uia08hb1g2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.motheringshop"
+              }
             }
           ]
         }
@@ -59,6 +74,14 @@
           }
         },
         {
+          "client_id": "20987748914-n25lv5d4v0bgm7pttnjgto00bh3cr3f4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.motheringshop",
+            "certificate_hash": "6012b2806467356d8c950559a8df0ae94e95d14a"
+          }
+        },
+        {
           "client_id": "20987748914-onp0ifq1sbi9lit5v7mjveqrt8eobb5c.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -74,6 +97,13 @@
             {
               "client_id": "20987748914-onp0ifq1sbi9lit5v7mjveqrt8eobb5c.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "20987748914-i7coo8s15cas4gb4vvj3p3uia08hb1g2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.motheringshop"
+              }
             }
           ]
         }

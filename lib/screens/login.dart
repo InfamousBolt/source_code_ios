@@ -84,7 +84,7 @@ class _LoginState extends State<Login> {
       ToastComponent.showDialog(loginResponse.message, context,
           gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
       AuthHelper().setUserData(loginResponse);
-      // push notification starts
+      //push notification starts
       // if (OtherConfig.USE_PUSH_NOTIFICATION) {
       //   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
       //
@@ -102,15 +102,15 @@ class _LoginState extends State<Login> {
       //
       //   if (fcmToken != null) {
       //     print("--fcm token--");
-      //     print(fcmToken);
       //     if (is_logged_in.$ == true) {
       //       // update device token
       //       var deviceTokenUpdateResponse = await ProfileRepository()
       //           .getDeviceTokenUpdateResponse(fcmToken);
       //     }
       //   }
-      // }
-
+        // Navigator.push(context, MaterialPageRoute(builder: (context) {
+        //   return Main();
+        // }));
       //push norification ends
 
       Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -194,31 +194,31 @@ class _LoginState extends State<Login> {
     }*/
   }
 
-  onPressedGoogleLogin() async {
-    try {
-      final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
-      // var v = await  GoogleSignIn().signOut();
-      //print("googleUser.email ${googleUser.id}");
-
-      var loginResponse = await AuthRepository().getSocialLoginResponse(
-          googleUser.displayName, googleUser.email, googleUser.id);
-      print(loginResponse);
-      if (loginResponse.result == false) {
-        ToastComponent.showDialog(loginResponse.message, context,
-            gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
-      } else {
-        ToastComponent.showDialog(loginResponse.message, context,
-            gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
-        AuthHelper().setUserData(loginResponse);
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return Main();
-        }));
-      }
-      GoogleSignIn().disconnect();
-    } on Exception catch (e) {
-      print("error is ....... $e");
-      // TODO
-    }
+  // onPressedGoogleLogin() async {
+  //   try {
+  //     final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+  //     // var v = await  GoogleSignIn().signOut();
+  //     //print("googleUser.email ${googleUser.id}");
+  //
+  //     var loginResponse = await AuthRepository().getSocialLoginResponse(
+  //         googleUser.displayName, googleUser.email, googleUser.id);
+  //     print(loginResponse);
+  //     if (loginResponse.result == false) {
+  //       ToastComponent.showDialog(loginResponse.message, context,
+  //           gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+  //     } else {
+  //       ToastComponent.showDialog(loginResponse.message, context,
+  //           gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+  //       AuthHelper().setUserData(loginResponse);
+  //       Navigator.push(context, MaterialPageRoute(builder: (context) {
+  //         return Main();
+  //       }));
+  //     }
+  //     GoogleSignIn().disconnect();
+  //   } on Exception catch (e) {
+  //     print("error is ....... $e");
+  //     // TODO
+  //   }
 
 
     /*
@@ -260,7 +260,7 @@ class _LoginState extends State<Login> {
         //-----------------------------------
       });
     });*/
-  }
+  //}
 
   onPressedTwitterLogin() async {
     try {
@@ -618,10 +618,10 @@ class _LoginState extends State<Login> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Visibility(
-                                    visible: true,
+                                    visible: false,
                                     child: InkWell(
                                       onTap: () {
-                                        onPressedGoogleLogin();
+                                        //onPressedGoogleLogin();
                                       },
                                       child: Container(
                                         width: 28,
