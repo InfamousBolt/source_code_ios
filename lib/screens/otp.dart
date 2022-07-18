@@ -44,11 +44,9 @@ class _OtpState extends State<Otp> {
         .getResendCodeResponse(widget.user_id,widget.verify_by);
 
     if (resendCodeResponse.result == false) {
-      ToastComponent.showDialog(resendCodeResponse.message, context,
-          gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+      ToastComponent.showDialog(resendCodeResponse.message, context, gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
     } else {
-      ToastComponent.showDialog(resendCodeResponse.message, context,
-          gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+      ToastComponent.showDialog(resendCodeResponse.message, context, gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
 
     }
 
@@ -59,8 +57,7 @@ class _OtpState extends State<Otp> {
     var code = _verificationCodeController.text.toString();
 
     if(code == ""){
-      ToastComponent.showDialog(AppLocalizations.of(context).otp_screen_verification_code_warning, context,
-          gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+      ToastComponent.showDialog(AppLocalizations.of(context).otp_screen_verification_code_warning, context,gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
       return;
     }
 
@@ -68,11 +65,9 @@ class _OtpState extends State<Otp> {
         .getConfirmCodeResponse(widget.user_id,code);
 
     if (confirmCodeResponse.result == false) {
-      ToastComponent.showDialog(confirmCodeResponse.message, context,
-          gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+      ToastComponent.showDialog(confirmCodeResponse.message, context, gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
     } else {
-      ToastComponent.showDialog(confirmCodeResponse.message, context,
-          gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
+      ToastComponent.showDialog(confirmCodeResponse.message, context, gravity: Toast.CENTER, duration: Toast.LENGTH_LONG);
 
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return Login();
@@ -101,117 +96,117 @@ class _OtpState extends State<Otp> {
               width: double.infinity,
               child: SingleChildScrollView(
                   child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 40.0, bottom: 15),
-                    child: Container(
-                      width: 75,
-                      height: 75,
-                      child:
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 40.0, bottom: 15),
+                        child: Container(
+                          width: 75,
+                          height: 75,
+                          child:
                           Image.asset('assets/login_registration_form_logo.png'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
-                    child: Text(
-                      "${AppLocalizations.of(context).otp_screen_verify_your} " +
-                          (_verify_by == "email"
-                              ? AppLocalizations.of(context).otp_screen_email_account
-                              : AppLocalizations.of(context).otp_screen_phone_number),
-                      style: TextStyle(
-                          color: MyTheme.accent_color,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Container(
-                        width: _screen_width * (3 / 4),
-                        child: _verify_by == "email"
-                            ? Text(
-                            AppLocalizations.of(context).otp_screen_enter_verification_code_to_email,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20.0),
+                        child: Text(
+                          "${AppLocalizations.of(context).otp_screen_verify_your} " +
+                              (_verify_by == "email"
+                                  ? AppLocalizations.of(context).otp_screen_email_account
+                                  : AppLocalizations.of(context).otp_screen_phone_number),
+                          style: TextStyle(
+                              color: MyTheme.accent_color,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 16.0),
+                        child: Container(
+                            width: _screen_width * (3 / 4),
+                            child: _verify_by == "email"
+                                ? Text(
+                                AppLocalizations.of(context).otp_screen_enter_verification_code_to_email,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: MyTheme.dark_grey, fontSize: 14))
-                            : Text(
-                            AppLocalizations.of(context).otp_screen_enter_verification_code_to_phone,
+                                : Text(
+                                AppLocalizations.of(context).otp_screen_enter_verification_code_to_phone,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: MyTheme.dark_grey, fontSize: 14))),
-                  ),
-                  Container(
-                    width: _screen_width * (3 / 4),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(
-                                height: 36,
-                                child: TextField(
-                                  controller: _verificationCodeController,
-                                  autofocus: false,
-                                  decoration:
+                      ),
+                      Container(
+                        width: _screen_width * (3 / 4),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    height: 36,
+                                    child: TextField(
+                                      controller: _verificationCodeController,
+                                      autofocus: false,
+                                      decoration:
                                       InputDecorations.buildInputDecoration_1(
                                           hint_text: "A X B 4 J H"),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 40.0),
+                              child: Container(
+                                height: 45,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: MyTheme.textfield_grey, width: 1),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(12.0))),
+                                child: FlatButton(
+                                  minWidth: MediaQuery.of(context).size.width,
+                                  //height: 50,
+                                  color: MyTheme.accent_color,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(12.0))),
+                                  child: Text(
+                                    AppLocalizations.of(context).otp_screen_confirm,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  onPressed: () {
+                                    onPressConfirm();
+                                  },
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 40.0),
-                          child: Container(
-                            height: 45,
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: MyTheme.textfield_grey, width: 1),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(12.0))),
-                            child: FlatButton(
-                              minWidth: MediaQuery.of(context).size.width,
-                              //height: 50,
-                              color: MyTheme.accent_color,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(12.0))),
-                              child: Text(
-                                AppLocalizations.of(context).otp_screen_confirm,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                              onPressed: () {
-                               onPressConfirm();
-                              },
                             ),
-                          ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 100),
-                    child: InkWell(
-                      onTap: (){
-                        onTapResend();
-                      },
-                      child: Text(AppLocalizations.of(context).otp_screen_resend_code,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: MyTheme.accent_color,
-                              decoration: TextDecoration.underline,
-                              fontSize: 13)),
-                    ),
-                  ),
-                ],
-              )),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 100),
+                        child: InkWell(
+                          onTap: (){
+                            onTapResend();
+                          },
+                          child: Text(AppLocalizations.of(context).otp_screen_resend_code,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: MyTheme.accent_color,
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 13)),
+                        ),
+                      ),
+                    ],
+                  )),
             )
           ],
         ),
